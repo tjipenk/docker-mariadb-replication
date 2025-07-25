@@ -58,7 +58,7 @@ elif [[ "$OP" == "--setup" ]]
         if [[ "$ROLE" == "--master" ]]
             then
                 echo "Master!"
-                docker-compose up --build -d mariadb
+                docker compose up --build -d mariadb
 
                 until docker exec replication sh -c 'mysql -uroot -p{} -e ";"' &> /dev/null
                 do
@@ -80,7 +80,7 @@ elif [[ "$OP" == "--setup" ]]
                 fi
 
                 echo "Slave!"
-                docker-compose up --build -d mariadb
+                docker compose up --build -d mariadb
 
                 until docker exec replication sh -c 'mysql -uroot -p${MARIADB_ROOT_PASSWORD} -e ";"'  &> /dev/null
                 do
