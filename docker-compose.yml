@@ -7,9 +7,13 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ./mysql_data:/var/lib/mysql
+      - ./config/my.cnf:/etc/mysql/my.cnf
+      - mariadb_data:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=test
-      - MYSQL_DATABASE=mydb
-      - MYSQL_USER=test_user
-      - MYSQL_PASSWORD=test
+      - MARIADB_ROOT_PASSWORD={MARIADB_ROOT_PASSWORD}
+      - MARIADB_DATABASE={MARIADB_DATABASE}
+      - MARIADB_USER={MARIADB_USER}
+      - MARIADB_PASSWORD={MARIADB_PASSWORD}
+
+volumes:
+  mariadb_data:

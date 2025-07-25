@@ -3,6 +3,13 @@
 
 MariaDB standard master-slave replication and fail-over with Docker. The replication can run on two remote servers. In addition, master and slave roles can be switching between servers for testing fail-over.
 
+
+## setup .env
+```.env
+
+
+```
+
 ## Set up Replication 
 #### Master Server
 
