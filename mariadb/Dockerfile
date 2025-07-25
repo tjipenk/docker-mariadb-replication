@@ -1,3 +1,3 @@
 FROM mariadb:lts
 
-COPY config/my.cnf /etc/mysql/
+COPY config/my.cnf /etc/
